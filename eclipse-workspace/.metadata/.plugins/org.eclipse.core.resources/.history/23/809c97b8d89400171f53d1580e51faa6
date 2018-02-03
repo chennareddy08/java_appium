@@ -1,0 +1,36 @@
+package maven_framework;
+
+import java.io.IOException;
+
+public class appiumserver2 {
+	
+	
+	public void startServer() {
+		Runtime runtime = Runtime.getRuntime();
+		try {
+			runtime.exec("xterm \"appium -a 127.0.0.1 -p 4723 --session-override -dc \"{\"\"noReset\"\": \"\"false\"\"}\"\"");
+			Thread.sleep(10000);
+		} catch (IOException | InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void stopServer() {
+		Runtime runtime = Runtime.getRuntime();
+		try {
+			runtime.exec("task kill /F /IM node.exe");
+			runtime.exec("task kill /F /IM cmd.exe");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		appiumserver2 appiumServer = new appiumserver2();
+		appiumServer.startServer();
+ 
+		appiumServer.stopServer();
+	}
+}
+
+

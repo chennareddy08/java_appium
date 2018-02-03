@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 4 elements from project &apos;framework1&apos;&#x0A;- Original project: &apos;framework1&apos;&#x0A;- Original elements:&#x0A;     HandstandStage2.ipa&#x0A;     HandstandStage2a.ipa&#x0A;     HandstandStage3.ipa&#x0A;     HandstandStage8.ipa" description="Delete elements" element1="app/HandstandStage8.ipa" element2="app/HandstandStage2.ipa" element3="app/HandstandStage3.ipa" element4="app/HandstandStage2a.ipa" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="4" stamp="1510751624606" subPackages="false" version="1.0"/>
+</session>

@@ -1,0 +1,57 @@
+package TestCases;
+import org.eclipse.jetty.util.log.Log;
+import org.openqa.selenium.NoAlertPresentException;
+import org.testng.annotations.Test;
+
+import common_objects.Common_functions;
+import common_objects.basetestcase;
+
+public class testlogin extends basetestcase {
+	
+	@Test
+	public void login() throws InterruptedException{
+		Common_functions cf= new Common_functions(driver);
+		try {
+			cf.ok_button().click();
+//			cf.skip_button().click();
+//			cf.start_screen().click();
+			driver.switchTo().alert().accept();
+			} catch (NoAlertPresentException e) {
+			Log.getLogger("Alert is not present" + e.getMessage());
+			}
+      cf.login_link().click();
+      cf.email_field().click();
+      cf.email_field().sendKeys("test88@gmail.com");
+      cf.password_field().click();
+      cf.password_field().sendKeys("11111111");
+      cf.done_keyboardbutton().click();
+      cf.login_button().click();
+      assert cf.welcome_back().isDisplayed(); 
+       }
+         
+      
+	 @Test   
+      public void logout() throws InterruptedException {
+    	  Common_functions cf= new Common_functions(driver);
+    	  login();
+    	  cf.hamburger_menu().click();
+    	  cf.logout_option().click();
+    	  assert cf.logout_confirmation_msg().isDisplayed();
+    //	  cf.cancel_button().click();
+    	//  cf.hamburger_menu().click();
+    	//  cf.logout_option().click();
+    	  cf.logout_button_confirmation().click();
+    	  assert cf.get_started().isDisplayed();
+    	  
+    	  
+    	  
+      }
+         
+        
+
+
+	}
+	
+
+
+
